@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Keeper</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="app.onInit()">
+    <section class="home">
+        <h1>Welcome</h1>
+        <h2>Find your way back to your best places</h2>
+        <button class="pref" onclick="app.onShowSettings()">User Preferences</button>
+        <button class="map">Map</button>
+    </section>
+    <section class="user-pref">
+        <form onSubmit="app.onSaveUserPref(event)">
+            <label for="email">
+                E-Mail
+                <input type="text" class="email" placeholder="Insert your email here">
+            </label>
+            <label for="age">
+                Age
+                <input onchange="this.title=this.value" type="range" min="18" max="120" class="age">
+            </label>
+            <h3>Colors</h3>
+            <label for="bgc">
+                Set Background Color
+                <input type="color" class="bgc">
+            </label>
+            <label for="txtColor">
+                Set Text Color
+                <input type="color" class="txt-color">
+            </label>
+            <label for="date">
+                Birth date
+                <input type="date" class="date">
+            </label>
+            <label for="time">
+                Birth Time
+                <input type="time" class="time">
+            </label>
+            <button class="set-btn">Set</button>
+        </form>
+    </section>
+    <section class="map">
+
+    </section>
+    <script type="module" src="js/app.controller.js"></script>
+</body>
+
+</html>
