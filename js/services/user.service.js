@@ -1,7 +1,7 @@
 import { utilService } from './util.service.js'
-import { storageService } from './async-storage.service.js'
 
 const STORAGE_KEY = "userData"
+
 export const userService = {
     saveUserData,
     getUserData

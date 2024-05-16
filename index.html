@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="app.onInit()">
+<body onload="app.onInitHomePage()">
     <section class="home">
         <h1>Welcome</h1>
-        <h2>Find your way back to your best places</h2>
-        <button class="pref" onclick="app.onShowSettings()">User Preferences</button>
-        <button class="map">Map</button>
+        <h3>Choose one of the options below</h3>
+        <button class="user-pref-btn" onclick="app.onShowSettings()">User Preferences</button>
+        <button class="map-btn" onclick="app.onInitMapPage()">Map</button>
     </section>
     <section class="user-pref">
         <form onSubmit="app.onSaveUserPref(event)">
@@ -45,8 +45,25 @@
             <button class="set-btn">Set</button>
         </form>
     </section>
-    <section class="map">
+    <section class="map" hidden>
+        <header>
+            <h1>Find your way back to your best places</h1>
+            <button class="home-btn" onclick="app.onInitHomePage()">Home</button>
+        </header>
+        <main>
+            <div class="show-map" style="width: 60%; height: 400px;">
 
+            </div>
+            <div class="places">
+                <button onclick="app.onPanToUserPos()" class="btn-user-pos">
+                    My Position
+                </button>
+                <h3>Places</h3>
+                <ul>
+    
+                </ul>
+            </div>
+        </main>
     </section>
     <script type="module" src="js/app.controller.js"></script>
 </body>

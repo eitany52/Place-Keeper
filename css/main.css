@@ -4,6 +4,10 @@
 
 body {
     background-color: yellowgreen;
+    text-align: start;
+}
+
+.home {
     text-align: center;
 }
 
@@ -36,14 +40,37 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: black;
+    position: relative;
+    top: 60px;
 }
 
 input {
     margin-inline-start: 10px;
 }
 
-h3 {
+form h3 {
     color: black;
     margin: 0;
+}
+
+main {
+    display: flex;
+}
+
+header h1 {
+    text-align: start;
+}
+
+header .home-btn {
+    text-align: start;
+    font-size: 20px;
+}
+
+.btn-user-pos {
+    font-size: 20px;
+}
+
+.places h3 {
+    margin-inline-start: 10px;
 }
