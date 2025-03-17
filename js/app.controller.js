@@ -1,5 +1,6 @@
 import { userService } from './services/user.service.js'
 import { placeService } from './services/place.service.js'
+import { config } from './config.js'
 
 window.app = {
     onInitHomePage,
@@ -132,7 +133,7 @@ function initMap(lat = 29.550360, lng = 34.952278) {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = 'AIzaSyCUE7BdmEO9uF_gWcV5yY5O3eqyINxdavo'
+    const API_KEY = config.API_KEY
     const elGoogleApi = document.createElement('script')
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`
     elGoogleApi.async = true

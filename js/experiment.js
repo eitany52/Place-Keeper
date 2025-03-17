@@ -1,11 +1,40 @@
-let places = []
-for (let i = 0; i < 2; i++) {
-    places[i] = {}
-    places[i].id = makeId()
-    places[i].lat = getRandomInRange()
-    places[i].lng = getRandomInRange()
+import data from '/data/temp-songs.json'
+
+function getAllSongIds(songs) {
+    const songIds = []
+    songs.forEach(song => {
+        songIds.push(song.contentDetails.videoId)
+    });
+    return songIds
 }
-console.log(places)
+const songs = data.items
+console.log(songs);
+
+
+
+
+async function getSongsFromYoutube() {
+    const songs = data.items
+    const songIds = _getSongIds(songs)
+    // res = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${songIds[0]},${songIds[1]},${songIds[2]},${songIds[3]}&key=${API_KEY}`)
+    data = await res.json()
+    const songsAdditionalInfo = data.items
+    _addDurationToSongs(songs, songsAdditionalInfo)
+    return songs
+    // return searchRes[0].items.slice(0,4)
+}
+
+
+
+
+// let places = []
+// for (let i = 0; i < 2; i++) {
+//     places[i] = {}
+//     places[i].id = makeId()
+//     places[i].lat = getRandomInRange()
+//     places[i].lng = getRandomInRange()
+// }
+// console.log(places)
 
 
 
